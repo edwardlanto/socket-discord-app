@@ -23,7 +23,7 @@ socket.on('roomUsers', ({ room, users }) => {
 socket.on('message', message => {
   outputMessage(message);
 
-  // Scroll down
+  // Scrolls down when a message is sent
   chatMessages.scrollTop = chatMessages.scrollHeight;
 });
 
@@ -34,6 +34,7 @@ chatForm.addEventListener('submit', e => {
   // Get message text
   let msg = e.target.elements.msg.value;
   
+  // Remove white space from image
   msg = msg.trim();
   
   if (!msg){
