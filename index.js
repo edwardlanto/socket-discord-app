@@ -2,6 +2,7 @@ const path = require("path");
 const http = require("http");
 const express = require("express");
 const socketio = require("socket.io");
+const routes = require('./routes/handlers');
 const formatMessage = require("./utils/messages");
 const {
   userJoin,
@@ -15,28 +16,17 @@ const server = http.createServer(app);
 const io = socketio(server);
 
 // Load express handlebars
-const handlebars = require("express-handlebars");
+const hb = require("express-handlebars");
 
-app.enable("view cache");
+// Serves assets in public folder with handlebars.
+app.use(express.static('public'));
 
-app.engine(
-  "hbs",
-  handlebars({
+app.engine('handlebars', hb());
+app.set('view engine', 'handlebars');
 
-    // Set extenstion to shorten handlebars keyword
-    extname: ".hbs",
-    defaultLayout: "main"
-  })
-);
+app.use('/', routes);
 
-// Use handlebars templating engine
-app.set("view engine", "hbs");
 
-app.get("/", (req, res) => {
-
-  //Serves the body of the page aka "main.handlebars" to the container //aka "index.handlebars"
-  res.render("main", { layout: "home" });
-});
 
 const botName = "ChatCord Bot";
 
