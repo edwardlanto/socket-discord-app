@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans";
+  padding: 0;
+  background: #363a3e;
+  margin: 0;
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-weight:bold;
+  color:#fff;
+}
+
+.container-fluid {
+  background: #363a3e;
+}
+
+ul{
+  list-style:none;
+  padding:0;
+}
+
+.btn.focus, .btn:focus {
+  outline: 0;
+  box-shadow: none;
+}

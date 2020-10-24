@@ -1,15 +1,14 @@
-const path = require("path");
 const http = require("http");
 const express = require("express");
 const socketio = require("socket.io");
 const routes = require('./routes/handlers');
-const formatMessage = require("./utils/messages");
+const formatMessage = require("./routes/utils/messages");
 const {
   userJoin,
   getCurrentUser,
   userLeave,
   getRoomUsers,
-} = require("./utils/users");
+} = require("./routes/utils/users");
 
 const app = express();
 const server = http.createServer(app);
@@ -17,6 +16,7 @@ const io = socketio(server);
 
 // Load express handlebars
 const hb = require("express-handlebars");
+require('dotenv').config()
 
 // Serves assets in public folder with handlebars.
 app.use(express.static('public'));
@@ -25,8 +25,6 @@ app.engine('handlebars', hb());
 app.set('view engine', 'handlebars');
 
 app.use('/', routes);
-
-
 
 const botName = "ChatCord Bot";
 
@@ -87,6 +85,12 @@ const PORT = process.env.PORT || 5000;
 process.on('uncaughtException', (err) => {
   console.log('Caught exception: ', err);
 });
+
+process.on('exit', (code) => {
+  io.socket.disconnect();
+  io.socket.close();
+  console.log(`Exiting ${code}`)
+})
 
 
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`));

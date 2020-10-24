@@ -1,23 +1,18 @@
 <body>
-	<div class="join-container">
-		<header class="join-header">
-			<h1><i class="fas fa-smile"></i>Discord</h1>
-		</header>
-		<main class="join-main">
+	<div class="home container">
+		<main>
 			<form action="chat">
-				<div class="form-control">
+				<h3>Edwards Favorites Chat</h3>
+				<div class="d-flex flex-column">
 					<label for="username">Username</label>
 					<input type="text" name="username" id="username" placeholder="Enter username..." required />
 				</div>
-				<div class="form-control">
+				<div class="d-flex flex-column">
 					<label for="room">Room</label>
 					<select name="room" id="room">
-						<option value="Anime">Anime</option>
-						<option value="Counter Strike">Counter Strike</option>
-						<option value="Manila Grey">Manila Grey</option>
-						<option value="Coding">Coding</option>
-						<option value="HON">HON</option>
-						<option value="Qanon">Qanon</option>
+						{{#each rooms}}
+						<option value="{{this}}">{{this}}</option>
+						{{/each}}
 					</select>
 				</div>
 				<button type="submit" class="btn">Join Chat</button>
