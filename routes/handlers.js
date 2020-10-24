@@ -1,8 +1,12 @@
 const router = require("express").Router();
-const rooms = require('../data/rooms');
+const { slice } = require("../data/rooms");
+const rooms = require("../data/rooms");
+
+function getList(){
+  return rooms.map((item) => item.slice(0,3))
+}
 
 router.get("/", (req, res) => {
-  console.log('rooms', rooms);
   res.render("home", {
     title: "Homepage",
     style: "home.css",
@@ -11,13 +15,14 @@ router.get("/", (req, res) => {
 });
 
 router.get("/chat", (req, res) => {
-  console.log(req.query.username)
+  console.log(req.query.username);
   res.render("chat", {
     title: "Chat",
     style: "chat.css",
-    helpers: {
-      firstLetter: function () { return req.query.username.charAt(0); }
-    }
+    firstLetter: () => {
+      return req.query.username.charAt(0);
+    },
+    threeLetterName: getList()
   });
 });
 

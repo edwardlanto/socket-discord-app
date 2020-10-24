@@ -1,12 +1,14 @@
 <body>
   <div class="chat d-flex">
     <ul class="chat__server">
+      {{#each threeLetterName}}
       <li>
         <div class="chat__server__icon d-flex justify-content-center align-items-center">
-          <a href="/chat?username=test&room=TEST">Atd</a>
+          <a href="/chat?username=test&room=TEST">{{this}}</a>
         </div>
         <div class="chat__server__seperator"></div>
       </li>
+      {{/each}}
     </ul>
     <div class="chatOuter d-flex col-md-12">
       <div class="chat__channels">
@@ -27,7 +29,8 @@
           </div>
           <div class="chat__channels__userArea">
             <div class="name">
-              <span id="chat__userIcon" class="d-inline-flex justify-content-center align-items-center">{{{firstLetter}}}</span>
+              <span id="chat__userIcon"
+                class="d-inline-flex justify-content-center align-items-center">{{{firstLetter}}}</span>
             </div>
             <div class="chat__icons">
               <span>i</span>
