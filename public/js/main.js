@@ -67,7 +67,6 @@ function outputMessage(message) {
 
 // Add room name to DOM
 function outputRoomName(room) {
-  console.log('room', room);
   roomName.innerText = room;
 }
 

@@ -176,9 +176,19 @@
   background: var(--color-grey-channel);
 }
 
+.chat__button{
+  background: transparent;
+  border: none;
+  margin:10px 0px 0px 15px;
+}
+
 .chat__messages__send{
   bottom: -5px;
   position: absolute;
+}
+
+#chat__form{
+  margin-bottom:15px;
 }
 
 @media (max-width:720px){

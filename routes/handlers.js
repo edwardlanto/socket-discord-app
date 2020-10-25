@@ -1,22 +1,27 @@
 const router = require("express").Router();
-const rooms = require("../data/rooms");
+const roomsObj = require("../data/rooms");
 
 router.get("/", (req, res) => {
   res.render("home", {
     title: "Homepage",
     style: "home.css",
-    rooms: rooms
+    rooms: roomsObj.rooms,
+    title: "Home"
   });
 });
 
 router.get("/chat", (req, res) => {
+  console.log(req.query.username)
   res.render("chat", {
     title: "Chat",
     style: "chat.css",
+
+    // Return only first letter for bottom icon
     firstLetter: () => {
-      return req.query.username.charAt(0);
+      return req.query.username.charAt(0)
     },
-    rooms: rooms.sliceTitle
+    
+    rooms: roomsObj.sliceTitle
   });
 });
 

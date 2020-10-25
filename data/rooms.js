@@ -1,5 +1,5 @@
 const roomsObj = {
-    rooms:["Anime", "Coding", "Going on dates", "Learning"],
+    rooms: ["Anime", "Coding", "Eating", "Learning"],
     get sliceTitle(){
         return this.rooms.map(item => item.slice(0,3))
     }

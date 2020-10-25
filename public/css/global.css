@@ -1,6 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+:root {
+	--dark-color-a: rgba(0,0,0, 0.9);
+	--dark-color-b: rgba(0,0,0, 0.9);
+	--light-color: #000;
+	--dark-background-color:#000;
+	--success-color: #5cb85c;
+	--error-color: #d9534f;
+}
+
 * {
+	box-sizing: border-box;
+	margin: 0;
+  padding: 0;
+  font-family:"Roboto";
   box-sizing: border-box;
   font-weight:bold;
+}
+
+
+html{
+	background:var(--dark-background-color);
 }
 
 body {
@@ -8,6 +28,13 @@ body {
   padding: 0;
   background: #363a3e;
   margin: 0;
+	font-size: 16px;
+	margin: 20px;
+}
+
+ul {
+  list-style:none;
+  padding:0;
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -15,13 +42,9 @@ h1,h2,h3,h4,h5,h6{
   color:#fff;
 }
 
-ul{
-  list-style:none;
-  padding:0;
-}
-
 a{
   color:#7288da;
+  text-decoration: none;
 }
 
 a:hover{
@@ -32,7 +55,7 @@ form{
   margin:0;
 }
 
-.btn.focus, .btn:focus {
+button:focus {
   outline: 0;
   box-shadow: none;
 }

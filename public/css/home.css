@@ -1,40 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-
-:root {
-	--dark-color-a: rgba(0,0,0, 0.9);
-	--dark-color-b: rgba(0,0,0, 0.9);
-	--light-color: #000;
-	--dark-background-color:#000;
-	--success-color: #5cb85c;
-	--error-color: #d9534f;
-}
-
-* {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-}
-
-
-html{
-	background:var(--dark-background-color);
-}
-
-body {
-
-	font-family: 'Roboto', sans-serif;
-	font-size: 16px;
-	margin: 20px;
-}
-
-ul {
-	list-style: none;
-}
-
-a {
-	text-decoration: none;
-}
-
 .home form{
     display: flex;
     flex-direction: column;
@@ -47,4 +10,13 @@ a {
     margin-bottom: .5rem;
     text-align: center;
     margin: 10px 0;
+}
+
+.home.container{
+	height:100%;
+}
+
+.home .button{
+	margin-top:20px;
+	padding:5px 7.5px;
 }

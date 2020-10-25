@@ -9,7 +9,8 @@ const {
   userLeave,
   getRoomUsers,
 } = require("./routes/utils/users");
-
+const favicon = require('serve-favicon')
+const path = require('path')
 const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
@@ -20,6 +21,9 @@ require('dotenv').config()
 
 // Serves assets in public folder with handlebars.
 app.use(express.static('public'));
+
+// Add favicon
+app.use(favicon(path.join(__dirname,'public','images','favicon.ico')));
 
 app.engine('handlebars', hb());
 app.set('view engine', 'handlebars');
@@ -50,7 +54,7 @@ io.on("connection", (socket) => {
     // Send ALL users and room info
     io.to(user.room).emit("roomUsers", {
       room: user.room,
-      users: getRoomUsers(user.room),
+      users: getRoomUsers(user.room)
     });
   });
 
@@ -74,7 +78,7 @@ io.on("connection", (socket) => {
       // Send users and room info
       io.to(user.room).emit("roomUsers", {
         room: user.room,
-        users: getRoomUsers(user.room),
+        users: getRoomUsers(user.room)
       });
     }
   });
@@ -89,7 +93,7 @@ process.on('uncaughtException', (err) => {
 process.on('exit', (code) => {
   io.socket.disconnect();
   io.socket.close();
-  console.log(`Exiting ${code}`)
+  console.log(`Exiting ${code}`);
 })
 
 
