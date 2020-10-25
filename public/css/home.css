@@ -15,6 +15,7 @@
 	padding: 0;
 }
 
+
 html{
 	background:var(--dark-background-color);
 }
@@ -35,7 +36,6 @@ a {
 }
 
 .home form{
-	height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;

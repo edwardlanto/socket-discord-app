@@ -1,17 +1,17 @@
 <body>
   <div class="chat d-flex">
     <ul class="chat__server">
-      {{#each threeLetterName}}
+      {{#each rooms}}
       <li>
-        <div class="chat__server__icon d-flex justify-content-center align-items-center">
-          <a href="/chat?username=test&room=TEST">{{this}}</a>
+        <div class="chat__server__icon d-flex flex-wrap justify-content-center align-items-center">
+          <a href="/chat?username=test&room={{this}}">{{this}}</a>
         </div>
         <div class="chat__server__seperator"></div>
       </li>
       {{/each}}
     </ul>
-    <div class="chatOuter d-flex col-md-12">
-      <div class="chat__channels">
+    <div class="chatOuter d-flex flex-wrap col-md-12">
+      <div class="chat__channels col-md-4 col-lg-2">
         <div class="chat__channelsInner">
           <nav>
             <h6>Server</h6>
@@ -32,15 +32,10 @@
               <span id="chat__userIcon"
                 class="d-inline-flex justify-content-center align-items-center">{{{firstLetter}}}</span>
             </div>
-            <div class="chat__icons">
-              <span>i</span>
-              <span>i</span>
-              <span>i</span>
-            </div>
           </div>
         </div>
       </div>
-      <div class="chat__innerTitle  col-md-8">
+      <div class="chat__innerTitle col-md-6 col-lg-8">
         <nav>
           <div class="chat__header">
             <h2>#general<h2>
@@ -48,20 +43,18 @@
         </nav>
         <div class="chat__inner">
           <div class="chat__messages">
-            <div class="chat__messages"></div>
-            <div class="chat__messages__send">
-              <form id="chat__form">
-                <input id="msg" type="text" placeholder="Enter Message" required autocomplete="off" />
-                <button class="btn"><i class="fas fa-paper-plane"></i> Send</button>
-              </form>
-            </div>
+            <div class="chat__messages col"></div>
           </div>
-
-
+          <div class="chat__messages__send">
+            <form id="chat__form" class="d-flex">
+              <input id="msg" type="text" placeholder="Enter Message" required autocomplete="off" class="col-md-10" />
+              <button class="btn"><i class="fas fa-paper-plane"></i> Send</button>
+            </form>
+          </div>
         </div>
-
       </div>
-      <div class="chat__members">
+      <div class="chat__members col-md-2 col-lg-2">
+        <h4>Users</h4>
         <ul id="chat__users"></ul>
       </div>
     </div>

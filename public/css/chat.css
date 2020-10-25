@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,700;1,400&display=swap");
 :root {
-  --color-grey-dark: #202326;
   --color-grey-channel: #2f3236;
   --color-grey-line: #2c2e31;
   --color-grey-light: #363a3e;
@@ -11,7 +10,7 @@
 }
 
 .chat {
-  height: 100vh;
+  height: 100%;
 }
 
 .chat__server {
@@ -28,6 +27,8 @@
   transition: all 0.2s ease-in-out;
   cursor: pointer;
   color: white;
+  margin-top:15px;
+  background:#2f3236;
 }
 
 .chat__server__icon:hover {
@@ -44,6 +45,14 @@
   margin: 0 auto;
 }
 
+.chat .meta span{
+  margin-left:10px;
+}
+
+.chat p.text{
+  font-weight:lighter;
+}
+
 .chatOuter {
   background: #363a3e;
 }
@@ -55,7 +64,6 @@
 
 .chat__channels {
   background: var(--color-grey-channel);
-  height: 100%;
   color: var(--color-grey-text);
 }
 .channels nav {
@@ -114,19 +122,11 @@
 }
 
 .chat__channels__userArea {
-  background: #292c2f;
-  margin-top: auto;
   padding: 10px;
   justify-content: space-between;
   align-items: center;
   position: absolute;
   bottom: 0;
-  width: 100%;
-}
-
-.chat__channelsInner {
-  position: relative;
-  height: 100%;
 }
 
 #chat__userIcon {
@@ -171,13 +171,18 @@
 }
 
 .chat__members {
-  width: 240px;
-  height: 100%;
+  color:#fff;
   padding: 15px;
   background: var(--color-grey-channel);
 }
 
 .chat__messages__send{
-  bottom: 0;
+  bottom: -5px;
   position: absolute;
+}
+
+@media (max-width:720px){
+  .chat__channels__userArea, .chat__messages__send{
+    position:static;
+  }
 }
