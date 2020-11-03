@@ -42,6 +42,10 @@ h1,h2,h3,h4,h5,h6{
   color:#fff;
 }
 
+.container-fluid{
+  overflow-x:hidden;
+}
+
 a{
   color:#7288da;
   text-decoration: none;

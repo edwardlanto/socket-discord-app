@@ -16,7 +16,11 @@
 	height:100%;
 }
 
-.home .button{
-	margin-top:20px;
-	padding:5px 7.5px;
+.home .button {
+    margin-top: 20px;
+    padding: 5px 7.5px;
+    box-shadow: none;
+    background: #7288da;
+    border: none;
+    padding: 6px 25px;
 }

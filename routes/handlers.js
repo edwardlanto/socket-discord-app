@@ -11,7 +11,6 @@ router.get("/", (req, res) => {
 });
 
 router.get("/chat", (req, res) => {
-  console.log(req.query.username)
   res.render("chat", {
     title: "Chat",
     style: "chat.css",
