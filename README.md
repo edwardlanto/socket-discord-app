@@ -1,4 +1,4 @@
-# Food Discord clone
+# Discord clone
 
 This is a Node chat application which uses the module [express-handlebars](https://www.npmjs.com/package/express-handlebars) as its front end. This app uses socket io to start a stream between sockets on an express server.
 
